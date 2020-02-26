@@ -9,10 +9,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
  
  
 module.exports={
-    entry:'./src/js/index.js',//入口JS
+    entry:'./src/js/main.js',//入口JS
     output:{
-        filename:'bundle.js',
-        path:path.resolve(__dirname,'./dist')
+        filename:'CMap.js',
+        path:path.resolve(__dirname,'./dist'),
+        library: 'CMap', //类库名称
+        libraryExport: "default",
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     module:{
         rules:[
